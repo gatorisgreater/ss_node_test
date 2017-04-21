@@ -19,7 +19,8 @@
   "homepage": "https://github.com/gatorisgreater/ss_node_test#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "mongoose": "^4.9.5"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
