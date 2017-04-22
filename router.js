@@ -23,13 +23,26 @@ router.get('/', (req, res) => {
 	});	
 });
 
-router.post('/', (req, res) => {
-	console.log(req.body.address.home);
+router.get('/:id', (req, res) => {
+	console.log(req.params.id);
+	Client
+	.findById(req.params.id)
+	.exec()
+	.then(client => {
+		res.status(200).json(client);
+	})
+	.catch(err => {
+		console.error(err);
+		res.status(500).json({error: 'There is a problem with yor request'})
+	});	
+});
 
+router.post('/', (req, res) => {
 	Client
 		.create({
 			name: req.body.name,
-			address: req.body.address,
+			personal: req.body.personal,
+			address: req.body.address
 		})
 		.then(client => res.status(201).json(client))
 		.catch(err => {
