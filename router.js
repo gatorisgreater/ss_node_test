@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 	.find()
 	.exec()
 	.then(clients => {
-		res.status(200).json("Hello World");
+		res.status(200).json(clients);
 	})
 	.catch(err => {
 		console.error(err);
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-	console.log(req.body);
+	console.log(req.body.address.home);
 
 	Client
 		.create({

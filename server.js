@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 app.use('/client', ClientRouter);
 
 let server;
-// this function connects to our database, then starts the server
+// this function connects to the database, then starts the server
 function runServer() {
   return new Promise((resolve, reject) => {
     mongoose.connect(db.url, err => {
