@@ -3,3 +3,6 @@ node_modules
 
 #db username and pw
 config/db.js
+
+.env
+

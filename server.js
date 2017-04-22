@@ -6,7 +6,10 @@ const app = express();
 const ClientRouter = require('./router');
 
 const db = require('./config/db');
-const DB_URL = db.url;
+const DB_URL = process.env.DB_URL ||
+               global.DB_URL ||
+               db.url;
+
 const port = 8080;
 
 app.use(bodyParser.json());
