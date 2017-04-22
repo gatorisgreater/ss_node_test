@@ -6,17 +6,20 @@ const app = express();
 const ClientRouter = require('./router');
 
 const db = require('./config/db');
+const DB_URL = db.url;
 const port = 8080;
 
 app.use(bodyParser.json());
 
 app.use('/client', ClientRouter);
 
+
+
 let server;
 // this function connects to the database, then starts the server
 function runServer() {
   return new Promise((resolve, reject) => {
-    mongoose.connect(db.url, err => {
+    mongoose.connect(DB_URL, err => {
       if (err) {
         return reject(err);
       }
