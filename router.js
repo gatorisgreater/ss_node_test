@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
 	.find()
 	.exec()
 	.then(clients => {
-		res.status(200).json({client: clients});
+		res.status(200).json({Client: clients});
 	})
 	.catch(err => {
 		console.error(err);
