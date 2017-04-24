@@ -202,26 +202,17 @@ const state = {
 //   ]
 // }
 
-console.log(Object.keys(state.Client));
-
-console.log(state.Client.length);
-
-console.log(state.Client);
-
-console.log(Object.keys(state.Client));
-
-const sampleTree = state.Client.map(client => {
+const clientTree = state.Client.map(client => {
  
   let keys = Object.keys(client);
 
   let propertyTree = '';
   for (var i = 1; i < keys.length; i++) {
-  let string = `<li>${keys[i]}</li>`;
+  let string = `<li><span class="tree_label" id="${client.name}-object-${keys[i]}-property">${keys[i]}</span></li>`;
   propertyTree += string;
-
   }
 
-  return '<ul>' + client.name + propertyTree + '</ul>'
+  return `<li><input type="checkbox" checked="checked" id="${client.name}-object" /><label for="${client.name}-object" class="tree_label">${client.name}</label><ul>${propertyTree}</ul></li>`
 })
 
 
@@ -251,9 +242,9 @@ const sampleTree = state.Client.map(client => {
 //   })
 // })
 
+console.log(Object.keys(state));
 
-
-const root = Object.keys(state.Client);
+const root = Object.keys(state);
 
 // State Manipulation Functions
 
@@ -266,14 +257,8 @@ const fetchClientObject = (callback) => $.getJSON(url, callback);
 
 const renderClientObject = (response) => {
 
-
-  let clientArray = state.Client.map(client => {
-    return '<li>' + client.name + '</li>';
-  })
-
-
   $('#root').html(root);  
-  $('#object-name-label-1').html(sampleTree);
+  $('.object-tree').html(`<ul>${clientTree}</ul>`);
    
 }
 
