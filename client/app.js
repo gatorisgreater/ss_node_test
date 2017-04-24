@@ -1,4 +1,4 @@
-const url = 'http://cors.io/?u=https://guarded-mountain-54113.herokuapp.com/client';
+const url = 'https://guarded-mountain-54113.herokuapp.com/client';
 
 const state = {
   "Client": [
