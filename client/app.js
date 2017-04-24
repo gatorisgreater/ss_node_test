@@ -1,5 +1,4 @@
-// const url = 'localhost:8080/client';
-
+const url = 'http://cors.io/?u=https://guarded-mountain-54113.herokuapp.com/client';
 
 const state = {
   "Client": [
@@ -230,6 +229,7 @@ console.log(state.Client[0].personal);
 
 const fetchClientObject = (callback) => $.getJSON(url, callback);
 
+const logger = (response) => console.log(response);
 
 const renderSubProperty = (event) => {
   $('#sub-property-1').html();    
@@ -251,4 +251,5 @@ renderClientObject();
 
 // AJAX
 
+$(document).ready(fetchClientObject(logger()));
 // $(document).ready(fetchClientObject(renderClientObject));
