@@ -227,10 +227,6 @@ console.log(state.Client[0].personal);
 // Render Functions
 
 
-const fetchClientObject = (callback) => $.getJSON(url, callback);
-
-const logger = (response) => console.log(response);
-
 const renderSubProperty = (event) => {
   $('#sub-property-1').html();    
 }
@@ -250,6 +246,16 @@ renderClientObject();
 
 
 // AJAX
+const ajaxClientObject = () => {
+  return fetch(url).then(response => {
+    return response.json();
+  })
+};
 
-$(document).ready(fetchClientObject(logger()));
-// $(document).ready(fetchClientObject(renderClientObject));
+const fetchClientObject = (callback) => {
+  callback().then(function(response) {
+  console.log(response);
+});
+}
+
+$(document).ready(fetchClientObject(ajaxClientObject));
