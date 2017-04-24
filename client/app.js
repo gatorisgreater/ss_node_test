@@ -216,35 +216,10 @@ const clientTree = state.Client.map(client => {
 })
 
 
-// for (var i = 0; i < state.Client.length; i++) {
-//   console.log(state.Client[i].name);
-  
-//   for (var j = 0; j < state.Client[0].address.length; j++) {
-//     console.log(state.Client[i].address[j]);
-//   }
-
-//   for (var k = 0; k < state.Client[0].personal.length; k++) {
-//     console.log(state.Client[i].personal[k]);
-//   }
-
-// }
-
-
-///WIP - using current DB schema
-
-// state.Client.map(client => {
-//   console.log(client.name);
-//   client.address.map(key => {
-//     console.log(key);
-//   })
-//   client.personal.map(key => {
-//     console.log(key);
-//   })
-// })
-
-console.log(Object.keys(state));
-
 const root = Object.keys(state);
+
+console.log(state.Client[0].address);
+console.log(state.Client[0].personal);
 
 // State Manipulation Functions
 
@@ -254,6 +229,12 @@ const root = Object.keys(state);
 
 
 const fetchClientObject = (callback) => $.getJSON(url, callback);
+
+
+const renderSubProperty = (event) => {
+  $('#sub-property-1').html();    
+}
+
 
 const renderClientObject = (response) => {
 

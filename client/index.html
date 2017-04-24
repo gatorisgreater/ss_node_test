@@ -7,61 +7,17 @@
 </head>
 <body>
 
-
-
-<div class="app"> 
-</div>
-
-
-<ul class="tree">
+<ul class="tree" onClick=console.log(event.target)>
   <li>
     <input type="checkbox" checked="checked" id="c1" />
-    <label class="tree_label" for="c1" id="root">Client</label>
+    <label class="tree_label" for="c1" id="root"></label>
     <ul class="object-tree">
-      <li>
-        <input type="checkbox" checked="checked" id="c2" />
-        <label for="c2" class="tree_label" id="object-name-label-1">Object Name Placeholder</label>
-        <ul>
-          <li><span class="tree_label" id="object-1-property-1">Property 1 Placeholder</span></li>
-          <li><span class="tree_label" id="object-1-property-2">Property 2 Placeholder</span></li>
-        </ul>
-      </li>
-
-      <li>
-        <input type="checkbox" checked="checked" id="c3" />
-        <label for="c3" class="tree_label" id="object-name-label-2">Object Name Placeholder</label>
-        <ul>
-          <li><span class="tree_label" id="object-2-property-1">Property 1 Placeholder</span></li>
-          <li><span class="tree_label" id="object-2-property-2">Property 2 Placeholder</span></li>
-        </ul>
-      </li>
-
-      <li>
-        <input type="checkbox" checked="checked" id="c4" />
-        <label for="c4" class="tree_label" id="object-name-label-3">Object Name Placeholder</label>
-        <ul>
-          <li><span class="tree_label" id="object-3-property-1">Property 1 Placeholder</span></li>
-          <li><span class="tree_label" id="object-3-property-2">Property 2 Placeholder</span></li>
-        </ul>
-      </li>
-
-      <li>
-        <input type="checkbox" checked="checked" id="c5" />
-        <label for="c5" class="tree_label" id="object-name-label-4">Object Name Placeholder</label>
-        <ul>
-          <li><span class="tree_label" id="object-4-property-1">Property 1 Placeholder</span></li>
-          <li><span class="tree_label" id="object-4-property-2">Property 2 Placeholder</span></li>
-        </ul>
-      </li>
-
     </ul>
   </li>
 </ul>
 
-<div>
 <p id="sub-property-1">Sub Property 1 Placeholder</p>
 <p id="sub-property-2">Sub Property 2 Placheolder</p>
-</div>
 
 <div>
 <span id="leaf">Leaf Placeholder</span>
