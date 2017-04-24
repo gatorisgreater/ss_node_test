@@ -15,7 +15,17 @@ router.get('/', (req, res) => {
 	.find()
 	.exec()
 	.then(clients => {
-		res.status(200).json({Client: clients});
+		console.log(clients);
+		// let clientRender = {};
+		// let clientSideFields = ['name', 'address', 'personal'];
+		// clientSideFields.forEach(field => {
+		// 	if (field in clients) {
+		// 		clientRender[field] = clients[field];
+		// 	}
+		// });
+		// console.log(clientRender);
+
+		res.status(200).json({Client: clients.map(client => client.apiGetRepr())});
 	})
 	.catch(err => {
 		console.error(err);
@@ -37,6 +47,8 @@ router.get('/:id', (req, res) => {
 	});	
 });
 
+
+//POST endpoint used to populate DB with data
 router.post('/', (req, res) => {
 	Client
 		.create({
