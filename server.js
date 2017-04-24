@@ -11,7 +11,7 @@ const DB_URL = process.env.DB_URL ||
                global.DB_URL;
                // db.url;
 
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
