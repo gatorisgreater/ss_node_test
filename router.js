@@ -10,21 +10,14 @@ app.use(bodyParser.json());
 
 mongoose.Promise = global.Promise;
 
+
+// GET endpoint to serve MongoDB resources, with abbreviated apiRepr
+
 router.get('/', (req, res) => {
 	Client
 	.find()
 	.exec()
 	.then(clients => {
-		console.log(clients);
-		// let clientRender = {};
-		// let clientSideFields = ['name', 'address', 'personal'];
-		// clientSideFields.forEach(field => {
-		// 	if (field in clients) {
-		// 		clientRender[field] = clients[field];
-		// 	}
-		// });
-		// console.log(clientRender);
-
 		res.status(200).json({Client: clients.map(client => client.apiGetRepr())});
 	})
 	.catch(err => {
@@ -32,6 +25,8 @@ router.get('/', (req, res) => {
 		res.status(500).json({error: 'There is a problem with yor request'})
 	});	
 });
+
+// GET endpoint to support varilable path routing (not implemented)
 
 router.get('/:id', (req, res) => {
 	console.log(req.params.id);
@@ -48,7 +43,8 @@ router.get('/:id', (req, res) => {
 });
 
 
-//POST endpoint used to populate DB with data
+// POST endpoint used to populate DB with data
+
 router.post('/', (req, res) => {
 	Client
 		.create({

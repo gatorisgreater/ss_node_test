@@ -27,7 +27,7 @@ Both panes should be populated either from a database or a JSON configuration fi
 
 
 	    ├ sage_node_test
-	    ├── client: Functional front end
+	    ├── docs: Functional front end
 	    │ └── app.js: state management and behavior
 	    │ └── index.html: structure 	    
 	    │ └── main.css: style     

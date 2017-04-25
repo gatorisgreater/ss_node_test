@@ -5,15 +5,15 @@ const {Client} = require('./models');
 const app = express();
 const ClientRouter = require('./router');
 
-// const db = require('./config/db');
 require('dotenv').config();
 const DB_URL = process.env.DB_URL ||
                global.DB_URL;
-               // db.url;
 
 const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
+
+// CORS 
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -21,8 +21,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use('/client', ClientRouter);
+// serves router file (supports modularization)
 
+app.use('/client', ClientRouter);
 
 
 let server;
