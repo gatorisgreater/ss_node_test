@@ -17,7 +17,7 @@ https://github.com/gatorisgreater/ss_node_test
 https://guarded-mountain-54113.herokuapp.com/client
 
 ### Screenshot
-![Peachtree Bank SPA](https://github.com/gatorisgreater/bb_fe_test/blob/master/assets/screenshot.PNG "Peachtree Bank SPA")
+![Sage Node Developer Eval](https://github.com/gatorisgreater/ss_node_test/blob/master/assets/screenshot.PNG "Sage Node Developer Eval")
 
 ### UX
 
