@@ -24,11 +24,10 @@ let state = {};
       clientTree = state.Client.map((client, index) => {
        
       let keys = Object.keys(client);
-      console.log(keys);
 
       let propertyTree = '';
         for (var i = 1; i < keys.length; i++) {
-          let string = `<li><span class="tree_label" id="${client.name}-object-${keys[i]}-property" value=${index}>${keys[i]}</span></li>`;
+          let string = `<li><span class="tree_label" id="${client.name}-object-${keys[i]}-property" value=${index} key=${keys[i]}>${keys[i]}</span></li>`;
           propertyTree += string;
         };
 
@@ -39,27 +38,18 @@ let state = {};
 
     // Makes Dynamic Client Subproperty Menu
 
-    const makeSubPropertyTree = (index) => {
+    const makeSubPropertyTree = (index, property) => {
 
-      let clientPropertyTree = state.Client[index];
+      let client = state.Client[index];
 
-      let clientKeys = Object.keys(clientPropertyTree);
+      let subPropertyObject = client[property];
 
-      console.log(clientPropertyTree);
+      let subprops = Object.keys(subPropertyObject);
 
-
-
-      let subPropertyTree = '';
-        for (var i = 1; i < clientKeys.length; i++) {
-          let subprops = Object.keys(clientPropertyTree[clientKeys[i]]);
-          console.log(subprops);
-          console.log(clientKeys[i]);
-          let string = `<p class="sub-property">${clientKeys[i]}</p>`;
-          subPropertyTree += string;
-        };
-        console.log(subPropertyTree);
-        return subPropertyTree;
-      };
+      subPropertyTree = subprops.map(sub => {
+        return `<li>${sub}</li>`
+      })
+    };
 
 
 
@@ -73,15 +63,7 @@ let state = {};
       $('.object-tree').html(`<ul>${clientTree}</ul>`);
       $('.header').addClass("hidden");
       $('.content').removeClass("hidden");
-      makeSubPropertyTree(0);
-        $('.sub-tree').html(`${subPropertyTree}`);  
     }
-
-
-    const renderSubProperty = (event) => {
-
-    }
-
 
 // Event Handlers
 
@@ -91,6 +73,17 @@ let state = {};
       event.preventDefault();
       renderClientObject();
     });
+
+    $(document).on('click', 'span.tree_label', event => {
+      event.preventDefault();
+      let trigger = event.target;
+      console.log(trigger);
+      let index = trigger.getAttribute('value');
+      let property = trigger.getAttribute('key');
+      makeSubPropertyTree(index, property);
+      $('.sub-tree').html(`<ul>${subPropertyTree}</ul>`);        
+
+    })
 
 // AJAX
 
@@ -105,7 +98,6 @@ let state = {};
     const fetchClientObject = (callback) => {
       callback().then(function(response) {
       state = response;
-      console.log(state);
     });
     }
 

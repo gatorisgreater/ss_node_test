@@ -4,9 +4,17 @@
 
 Develop an dynamic menu system for a new web application
 
+### Application Demo
+
+https://gatorisgreater.github.io/ss_node_test/
+
 ### GitHub Repo
 
 https://github.com/gatorisgreater/ss_node_test
+
+### Deployed API
+
+https://guarded-mountain-54113.herokuapp.com/client
 
 ### Screenshot
 ![Peachtree Bank SPA](https://github.com/gatorisgreater/bb_fe_test/blob/master/assets/screenshot.PNG "Peachtree Bank SPA")
@@ -31,10 +39,6 @@ Both panes should be populated either from a database or a JSON configuration fi
 	    │ └── app.js: state management and behavior
 	    │ └── index.html: structure 	    
 	    │ └── main.css: style     
-	    ├── config: db config files
-	    │ └── app.js: state management and behavior  
-	    │ └── index.html    
-	    │ └── main.css: style-sheet
 	    ├ api files: 
 	    ├ models.js: mongoDB schema
 	    ├ router.js: modularized GET and POST endpoints
@@ -42,8 +46,7 @@ Both panes should be populated either from a database or a JSON configuration fi
 
 ### Requirements/Installation
 
-1. Install package dependencies using preferred package manager.
-2. Open in the browser on src/client/index.html
+Runs in the browser at: https://gatorisgreater.github.io/ss_node_test/
 
 ### Development Notes on v1
 
