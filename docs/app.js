@@ -62,7 +62,7 @@ let state = {};
       $('#root').html(root);  
       $('.object-tree').html(`<ul>${clientTree}</ul>`);
       $('.header').addClass("hidden");
-      $('.content').removeClass("hidden");
+      $('.content, .sub-tree').removeClass("hidden");
     }
 
 // Event Handlers

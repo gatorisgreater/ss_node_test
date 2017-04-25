@@ -124,3 +124,15 @@ label.tree_label:after { border-bottom: 0; }
 header {
   text-align: center;
 }
+
+.content {
+  border: 5px solid #333333;
+}
+
+.sub-tree {
+  border: 3px solid #333333;
+}
+
+li:active { 
+    color: blue;
+}
