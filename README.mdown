@@ -1,0 +1,56 @@
+# Skills Evaluation SPC
+
+### Description:
+
+Develop an dynamic menu system for a new web application
+
+### GitHub Repo
+
+https://github.com/gatorisgreater/ss_node_test
+
+### Screenshot
+![Peachtree Bank SPA](https://github.com/gatorisgreater/bb_fe_test/blob/master/assets/screenshot.PNG "Peachtree Bank SPA")
+
+### UX
+
+The menu has two panes. The top pane allows the user to select the top level of the menu structure. The bottom pane in the menu system implements a context sensitive menu.
+
+Both panes should be populated either from a database or a JSON configuration file and must support n-level depth. 
+
+### Tech Stack:
+
+* Node with Express - API
+
+* Plain Vanilla JavaScript and jQuery - Front End Framework
+
+* Mocha - Node Testing Framework. Used with Chai assertion library.
+
+
+	    ├ sage_node_test
+	    ├── client: Functional front end
+	    │ └── app.js: state management and behavior
+	    │ └── index.html: structure 	    
+	    │ └── main.css: style     
+	    ├── config: db config files
+	    │ └── app.js: state management and behavior  
+	    │ └── index.html    
+	    │ └── main.css: style-sheet
+	    ├ api files: 
+	    ├ models.js: mongoDB schema
+	    ├ router.js: modularized GET and POST endpoints
+	    ├ server.js: server configuration 	    	    
+
+### Requirements/Installation
+
+1. Install package dependencies using preferred package manager.
+2. Open in the browser on src/client/index.html
+
+### Development Notes on v1
+
+* Basic state management principles implemented in app.js.
+* mongoDB deployed to mLab.
+* API deployed to heroku.
+
+### Development Roadmap for the Future:
+
+* Implement MVC framework (React or Angular) or server side rendering

@@ -8,6 +8,7 @@ let state = {};
 
 let root;
 let clientTree;
+let subPropertyTree;
 
 const makeClientTree = () => {
 
@@ -16,6 +17,7 @@ const makeClientTree = () => {
   clientTree = state.Client.map(client => {
    
   let keys = Object.keys(client);
+  console.log(keys);
 
   let propertyTree = '';
     for (var i = 1; i < keys.length; i++) {
@@ -29,20 +31,37 @@ const makeClientTree = () => {
 };
 
 
+const makeSubPropertyTree = (index) => {
+
+  console.log(state.Client[index]);
+  // let keys = Object.keys(client);
+  // console.log(keys);
+
+  // let subPropertyTree = '';
+  //   for (var i = 1; i < keys.length; i++) {
+  //     let string = `<li><span class="tree_label" id="${client.name}-object-${keys[i]}-property">${keys[i]}</span></li>`;
+  //     propertyTree += string;
+  //   };
+
+  //   return `<li><input type="checkbox" checked="checked" id="${client.name}-object" /><label for="${client.name}-object" class="tree_label">${client.name}</label><ul>${propertyTree}</ul></li>`
+  };
+
+
+
 // Render Functions
 
 const renderClientObject = () => {
   makeClientTree();
   $('#root').html(root);  
   $('.object-tree').html(`<ul>${clientTree}</ul>`);
-    $('.header').addClass("hidden");
-    $('.content').removeClass("hidden");  
-   
+  $('.header').addClass("hidden");
+  $('.content').removeClass("hidden");
+  makeSubPropertyTree(0);  
 }
 
 
 const renderSubProperty = (event) => {
-  $('#sub-property-1').html();    
+
 }
 
 
