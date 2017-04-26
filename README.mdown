@@ -35,6 +35,8 @@ Both panes should be populated either from a database or a JSON configuration fi
 
 
 	    ├ sage_node_test
+	    ├── assets: web app screenshot image file	    
+	    ├── test: server-side unit testing of GET endpoint and response object		    
 	    ├── docs: Functional front end
 	    │ └── app.js: state management and behavior
 	    │ └── index.html: structure 	    

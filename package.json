@@ -4,7 +4,7 @@
   "description": "skills evaluation for sage node developer",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha",
     "dev": "nodemon server.js"
   },
   "repository": {
@@ -24,6 +24,10 @@
     "mongoose": "^4.9.5"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
+    "faker": "^4.1.0",
+    "mocha": "^3.3.0",
     "nodemon": "^1.11.0"
   }
 }
