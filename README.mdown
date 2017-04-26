@@ -32,6 +32,7 @@ Both panes should be populated either from a database or a JSON configuration fi
 * Plain Vanilla JavaScript and jQuery - Front End Framework
 
 * Mocha - Node Testing Framework. Used with Chai assertion library.
+	NOTE: 2 tests are successfully passing but the test file is commented out. You can run it using test command but point it to a test db as to not dump the production db.
 
 
 	    ├ sage_node_test
